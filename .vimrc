@@ -73,8 +73,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-"Add your bundles here
-
+" Add your bundles here:
 Plugin 'vim-airline/vim-airline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'davidhalter/jedi-vim'
@@ -82,7 +81,7 @@ Plugin 'Shougo/neocomplcache.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Syntastic'
 '
-"Installing bundles...
+" Installing bundles...
 if iCanHazVundle == 0
     echo "Installing Vundles, please ignore key map error messages"
     echo ""
@@ -100,10 +99,6 @@ syntax on                      " enable syntax
 " =============================================================================
 "                             Vim settings
 " =============================================================================
-"
-
-" colorscheme wombat256
-" syntax on                      " enable syntax
 
 " Showing line numbers and length
 set number  " show line numbers
@@ -117,14 +112,6 @@ highlight ColorColumn ctermbg=233
 " =============================================================================
 "                            Plugin shortcuts
 " =============================================================================
-"
-" Settings for jedi-vim
-" cd ~/.vim/bundle
-" git clone git://github.com/davidhalter/jedi-vim.git
-"let g:jedi#usages_command = "<leader>z"
-"let g:jedi#popup_on_dot = 0
-"let g:jedi#popup_select_first = 0
-"map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Nerdtree ----------------------------
 map <F3> :NERDTreeToggle<CR>
