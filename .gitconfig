@@ -9,4 +9,5 @@
 	cm = !git add -A && git commit -m
 	save = !git add -A && git commit -m 'SAVEPOINT'
 	last = log -1 HEAD
-
+	acp = ! git add -A . && git commit -m . && git push origin master
+        
