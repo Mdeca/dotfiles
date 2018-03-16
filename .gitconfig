@@ -1,0 +1,16 @@
+#[user]
+#	email = mdeca.dev@gmail.com
+#	name = Mdeca
+
+[include]
+	path = ~/.gitconfig.local
+
+[status]
+	showUntrackedFiles = no
+
+[alias]
+	add-commit = !git add -A && git commit
+	cm = !git add -A && git commit -m
+	save = !git add -A && git commit -m 'SAVEPOINT'
+	last = log -1 HEAD
+
