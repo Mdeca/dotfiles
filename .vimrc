@@ -39,6 +39,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'airblade/vim-gitgutter'
+
 
 " Installing bundles...
 if iCanHazVundle == 0
