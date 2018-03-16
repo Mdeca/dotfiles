@@ -1,2 +1,6 @@
 *
 .dotfiles.git
+
+!.gitignore
+!.zshrc
+!.vimrc
