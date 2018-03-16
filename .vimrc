@@ -1,6 +1,80 @@
 " =============================================================================
 "                            .vimrc by Mdeca
 " =============================================================================
+"
+"
+" =============================================================================
+"                                   Vundle 
+" =============================================================================
+
+
+" Setting up Vundle - the vim plugin bundler
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
+if !filereadable(vundle_readme) 
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    let iCanHazVundle=0
+endif
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Add your bundles here:
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Syntastic'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+"" Plugin 'valloric/youcompleteme'
+
+" Installing bundles...
+if iCanHazVundle == 0
+    echo "Installing Vundles, please ignore key map error messages"
+    echo ""
+    :PluginInstall
+endif
+
+call vundle#end() 
+filetype plugin indent on " load filetype plugins/indent settings
+
+colorscheme wombat256
+syntax on                      " enable syntax highlighting
+ 
+
+" Setting up Vundle - the vim plugin bundler end
+
+" -----------------------------------------------------------------------------
+" Brief help
+" 
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" -----------------------------------------------------------------------------
+
+
+" =============================================================================
+" =============================================================================
+"
+"
+" =============================================================================
+"                             Vim settings
+" =============================================================================
+
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
@@ -47,59 +121,6 @@ vnoremap > >gv  " better indentation
 " map sort function to a key
 vnoremap <Leader>s :sort<CR>
 
-filetype on
-autocmd FileType python nnoremap <buffer> <F5> :exec '!clear; python' shellescape(@%, 1)<cr>
-
-" =============================================================================
-
-" =============================================================================
-"                                   Vundle 
-" =============================================================================
-
-" Setting up Vundle - the vim plugin bundler
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme) 
-    echo "Installing Vundle.."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
-    let iCanHazVundle=0
-endif
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-" Add your bundles here:
-Plugin 'vim-airline/vim-airline'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'Shougo/neocomplcache.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Syntastic'
-'
-" Installing bundles...
-if iCanHazVundle == 0
-    echo "Installing Vundles, please ignore key map error messages"
-    echo ""
-    :PluginInstall
-endif
-
-call vundle#end() 
-
-filetype plugin indent on " load filetype plugins/indent settings
-colorscheme wombat256
-syntax on                      " enable syntax
- 
-" Setting up Vundle - the vim plugin bundler end
-
-" =============================================================================
-"                             Vim settings
-" =============================================================================
-
 " Showing line numbers and length
 set number  " show line numbers
 "set relativenumber
@@ -109,15 +130,33 @@ set fo-=t   " don't automatically wrap text when typing
 set colorcolumn=80
 highlight ColorColumn ctermbg=233
 
+" Run python script from vim
+filetype on
+autocmd FileType python nnoremap <buffer> <F5> :exec '!clear; python' shellescape(@%, 1)<cr>
+
+
+" =============================================================================
+" =============================================================================
+"
+"
 " =============================================================================
 "                            Plugin shortcuts
 " =============================================================================
 
+
 " Nerdtree ----------------------------
+"
+" Open Nerdtree on vim startup
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Set key for nerdtree
 map <F3> :NERDTreeToggle<CR>
 
+
 " Python folding ----------------------
+"
 set nofoldenable
+
 
 " Jedi-vim ----------------------------
 " 
@@ -129,6 +168,7 @@ let g:jedi#usages_command = ',o'
 let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
 nmap ,D :tab split<CR>:call jedi#goto()<CR>
+
 
 " NeoComplCache ------------------------------
 "
@@ -147,6 +187,7 @@ let g:neocomplcache_min_syntax_length = 1
 let g:neocomplcache_same_filetype_lists = {}
 let g:neocomplcache_same_filetype_lists._ = '_'
 
+
 " Syntastic ------------------------------
 "
 " show list of errors and warnings on the current file
@@ -160,4 +201,17 @@ let g:syntastic_enable_signs = 0
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠' 
+let g:syntastic_style_warning_symbol = '⚠'
+
+
+" CtrlP -------------------------------
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP' 
+
+" Tagbar ------------------------------
+let g:tagbar_usearrows = 1
+nnoremap <leader>l :TagbarToggle<CR>
+
+
+" =============================================================================
+" =============================================================================
