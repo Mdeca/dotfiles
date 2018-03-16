@@ -1,0 +1,26 @@
+# =========================================================================== #
+#     Install your dotfiles onto a new system (or migrate to this setup)      #
+# =========================================================================== #
+#
+#  Prior to the installation make sure you have committed the alias 
+#  to your .bashrc or .zsh:
+# ➜  ~ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
+#
+#  Now clone your dotfiles into a bare repository 
+#  in a "dot" folder of your $HOME:
+# ➜  ~ git clone --bare https://github.com/Mdeca/dotfiles.git $HOME/.dotfiles.git
+#
+#  Checkout the actual content from the bare repository to your $HOME:
+# ➜  ~ dotfiles checkout
+#
+#  Set the flag showUntrackedFiles to no on this specific (local) repository:
+# ➜  ~ dotfiles --local status.showuntrackedfiles no
+#
+#  You're done, from now on you can now type config commands 
+#  to add and update your dotfiles:
+# ➜  ~ dotfiles status
+# ➜  ~ dotfiles add .vimrc
+# ➜  ~ dotfiles commit -m "Add vimrc"
+# ➜  ~ dotfiles push origin master
+#
+# =========================================================================== # 
