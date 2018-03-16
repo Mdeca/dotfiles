@@ -100,6 +100,11 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# Git function - alias for adding/committing files in one go
+function acu {
+	dot add -A && dot commit -m "$1"
+}
+
 # =========================================================================== #
 #                                 ALIAS                                       #
 # =========================================================================== #
