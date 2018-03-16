@@ -39,7 +39,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-"" Plugin 'valloric/youcompleteme'
 
 " Installing bundles...
 if iCanHazVundle == 0
@@ -54,7 +53,6 @@ filetype plugin indent on " load filetype plugins/indent settings
 colorscheme wombat256
 syntax on                      " enable syntax highlighting
  
-
 " Setting up Vundle - the vim plugin bundler end
 
 " -----------------------------------------------------------------------------
@@ -103,6 +101,9 @@ inoremap <C-Z> <C-O>:update<CR>
 " Quick quit command
 noremap <Leader>e :quit<CR>  " Quit current window
 noremap <Leader>E :qa!<CR>   " Quit all windows
+
+" Remap Tab to ESC
+inoremap <Tab> <Esc>
 
 " easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
@@ -193,16 +194,24 @@ let g:neocomplcache_same_filetype_lists._ = '_'
 " show list of errors and warnings on the current file
 nmap <leader>b :Errors<CR>
 " check also when just opened the file
-let g:syntastic_check_on_open = 1
+"" let g:syntastic_check_on_open = 1
 " don't put icons on the sign column (it hides the vcs status icons of signify)
-let g:syntastic_enable_signs = 0
+"" let g:syntastic_enable_signs = 0
 " custom icons (enable them if you use a patched font, and enable the previous 
 " setting)
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
+"" let g:syntastic_error_symbol = '✗'
+"" let g:syntastic_warning_symbol = '⚠'
+"" let g:syntastic_style_error_symbol = '✗'
+"" let g:syntastic_style_warning_symbol = '⚠'
+" update ----
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0 
 
 " CtrlP -------------------------------
 let g:ctrlp_map = '<c-p>'
