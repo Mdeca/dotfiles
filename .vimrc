@@ -38,6 +38,7 @@ Plugin 'Shougo/neocomplcache.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Syntastic'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tibabit/vim-templates'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
 
@@ -150,7 +151,10 @@ inoremap <C-n> :nohl<CR>
 filetype on
 autocmd FileType python nnoremap <buffer> <F5> :exec '!clear; python' shellescape(@%, 1)<cr>
 
+" Load template
+au BufNewFile *.py 0r /home/an0n/Templates/pythonheader.template
 
+ 
 " =============================================================================
 " =============================================================================
 "
