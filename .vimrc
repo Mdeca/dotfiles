@@ -126,12 +126,25 @@ vnoremap <Leader>s :sort<CR>
 
 " Showing line numbers and length
 set number  " show line numbers
-"set relativenumber
 set tw=79   " width of document (used by gd)
 set nowrap  " don't automatically wrap on load
 set fo-=t   " don't automatically wrap text when typing
 set colorcolumn=80
 highlight ColorColumn ctermbg=233
+"" set relativenumber
+
+" Make search case insensitive
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Bind nohl
+" Removes highlight of your last search
+" ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
+noremap <C-n> :nohl<CR>
+vnoremap <C-n> :nohl<CR>
+inoremap <C-n> :nohl<CR>
 
 " Run python script from vim
 filetype on
