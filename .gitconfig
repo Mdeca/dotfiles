@@ -10,4 +10,5 @@
 	save = !git add -A && git commit -m 'SAVEPOINT'
 	last = log -1 HEAD
 	acp = ! git add -A . && git commit -m "Update" && git push origin master
+        ac = ! git add -A . && git commit 
         
