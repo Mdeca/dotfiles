@@ -1,7 +1,3 @@
-#[user]
-#	email = mdeca.dev@gmail.com
-#	name = Mdeca
-
 [include]
 	path = ~/.gitconfig.local
 
