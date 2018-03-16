@@ -9,6 +9,8 @@
 #  Now clone your dotfiles into a bare repository 
 #  in a "dot" folder of your $HOME:
 # ➜  ~ git clone --bare https://github.com/Mdeca/dotfiles.git $HOME/.dotfiles.git
+#  Or use ssh : 
+# ➜  ~ git clone --bare git@github.com:Mdeca/dotfiles.git $HOME/.dotfiles.git
 #
 #  Checkout the actual content from the bare repository to your $HOME:
 # ➜  ~ dotfiles checkout
