@@ -3,7 +3,8 @@
 #
 ##
 
-# Import dotfiles from github:
+echo "Mdeca_Dotfiles.sh"
+read -p "Press enter to continue."
 
 echo "Setting dotfiles alias"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
