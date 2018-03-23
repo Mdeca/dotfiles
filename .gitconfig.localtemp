@@ -1,0 +1,6 @@
+# Save as .gitconfig.local
+
+[user]
+        name = <name>
+        email = <email>
+
