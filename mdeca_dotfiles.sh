@@ -2,6 +2,7 @@
 # Mdece_dotfiles.sh
 #
 ##
+
 # Import dotfiles from github:
 
 echo "Setting dotfiles alias"
@@ -22,4 +23,5 @@ source $HOME/.zshrc
 
 echo "Show repository status"
 dotfiles status
+
 ## End #
