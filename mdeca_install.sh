@@ -22,26 +22,26 @@ sudo apt-get install -y python3.6
 # Install git-core:
 sudo apt-get install -y git-core
 
+# Install zsh and ohmyzsh:
+sudo apt-get install -y zsh
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
 # Import dotfiles from github:
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 dotfiles config --local status.showUntrackedFiles no
 git clone --bare https://github.com/Mdeca/dotfiles.git $HOME/.dotfiles.git
 dotfiles checkout
 
-git clone https://github.com/Mdeca/dotfiles.git $HOME/dotfiles.repo
-
-
-# Install zsh and ohmyzsh:
-sudo apt-get install -y zsh
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-chsh -s $(which zsh)
-source $HOME/.zshrc
-
+# Cleaning:
 echo "Cleaning Up" &&
 sudo apt-get -f install &&
 sudo apt-get autoremove &&
 sudo apt-get -y autoclean &&
 sudo apt-get -y clean
+
+# Change default shell:
+chsh -s $(which zsh)
+source $HOME/.zshrc
 
 read -p "Done !! Press enter to reboot"
 reboot
