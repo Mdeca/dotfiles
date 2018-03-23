@@ -34,7 +34,7 @@ dotfiles checkout
 sudo apt-get install -y zsh
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 chsh -s $(which zsh)
-
+source $HOME/.zshrc
 
 echo "Cleaning Up" &&
 sudo apt-get -f install &&
