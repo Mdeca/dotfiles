@@ -4,10 +4,6 @@
 [status]
 	showUntrackedFiles = no
 
-# [user]
-#         name = 
-#         email = 
-
 [alias]
 	add-commit = !git add -A && git commit
 	cm = !git add -A && git commit -m
