@@ -119,5 +119,6 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 alias dotbackup="/usr/bin/git --git-dir=$HOME/dotfiles.backup/ --work-tree=$HOME"
 alias edit="vim"
+
 # =========================================================================== #
 # =========================================================================== #
