@@ -1,12 +1,10 @@
 #!/bin/bash
-# Simple script to setup dev environment
+# Mdeca_setup.sh
 #
 ## 
 
-
-echo "MdecaSetup.sh"
+echo "Mdeca_Setup.sh"
 read -p "Press enter to continue."
-
 
 # add repository's :
 echo "Adding Repositorys"
