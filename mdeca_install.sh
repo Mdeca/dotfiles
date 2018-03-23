@@ -31,7 +31,16 @@ dotfiles checkout
 # Install zsh and ohmyzsh:
 sudo apt-get install -y zsh
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-chsh -s `which zsh`
+chsh -s $(which zsh)
+
+
+echo "Cleaning Up" &&
+sudo apt-get -f install &&
+sudo apt-get autoremove &&
+sudo apt-get -y autoclean &&
+sudo apt-get -y clean
 
 read -p "Done !! Press enter to reboot"
 reboot
+
+#END#
