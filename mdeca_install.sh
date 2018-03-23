@@ -26,9 +26,10 @@ sudo apt-get install -y git-core
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 dotfiles config --local status.showUntrackedFiles no
 git clone --bare https://github.com/Mdeca/dotfiles.git $HOME/.dotfiles.git
+dotfiles checkout
+
 git clone https://github.com/Mdeca/dotfiles.git $HOME/dotfiles.repo
 
-dotfiles checkout
 
 # Install zsh and ohmyzsh:
 sudo apt-get install -y zsh
