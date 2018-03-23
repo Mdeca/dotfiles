@@ -17,10 +17,7 @@ echo "Checkout from master"
 dotfiles checkout -f
 
 echo "Config Git"
-nano $HOME/.gitconfig
-
 nano $HOME/.gitconfig.localtemp
-# create .gitconfig.localtemp
 
 echo "Source the new .zshrc"
 source $HOME/.zshrc
