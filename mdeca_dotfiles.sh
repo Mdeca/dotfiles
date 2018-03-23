@@ -1,8 +1,6 @@
 # Mdece_dotfiles.sh
 #
 ##
-
-
 # Import dotfiles from github:
 
 echo "Setting dotfiles alias"
