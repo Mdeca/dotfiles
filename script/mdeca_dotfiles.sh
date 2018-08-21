@@ -1,5 +1,5 @@
 #!/bin/bash
-# Mdece_dotfiles.sh
+# Mdeca_dotfiles.sh
 #
 ##
 
